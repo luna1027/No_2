@@ -3,6 +3,9 @@ session_start();
 date_default_timezone_set("Asia/Taipei");
 
 $Admin = new DB('admin');
+$News = new DB('news');
+$Que = new DB('que');
+// $Admin = new DB('admin');
 
 class DB
 {
@@ -21,13 +24,14 @@ class DB
         foreach ($array as $key => $value) {
             $tmp[] = "`$key`='$value'";
         }
+
         return $tmp;
     }
 
     public function all(...$arg)
     {
         $sql = " SELECT * FROM `$this->table` ";
-        if (isset($arg)) {
+        if (isset($arg[0])) {
             if (is_array($arg[0])) {
                 $sql .= " WHERE " . join(" && ", $this->arrayToSqlArray($arg[0]));
             } else {
@@ -45,9 +49,10 @@ class DB
             $sql .= join(" && ", $this->arrayToSqlArray($arg));
         } else {
             $sql .= " `id` = " . $arg;
-
-            return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         }
+
+        // echo $sql;
+        return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
     public function save($arg)
@@ -124,4 +129,3 @@ function to($url)
 {
     header("location:" . $url);
 }
-?>

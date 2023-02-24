@@ -38,11 +38,11 @@ include_once "./api/base.php";
 			</div>
 			<div class="hal" id="main">
 				<div>
-					<marquee style="width:82%;" behavior="" direction="">請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地!詳見最新文章</marquee>
+					<marquee style="width:75%;" behavior="" direction="">請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地!詳見最新文章</marquee>
 					<span style="width:18%; display:inline-block;float:right;">
 						<a href="?do=login">會員登入</a>
 					</span>
-					<div class="">
+					<div class="mAuto">
 						<?php
 						$do = $_GET['do'] ?? 'main';
 						$file = './front/' . $do . '.php';
@@ -57,7 +57,7 @@ include_once "./api/base.php";
 			</div>
 		</div>
 		<div id="bottom">
-			本網站建議使用：IE9.0以上版本，1024 x 768 pixels 以上觀賞瀏覽 ， Copyright © 2012健康促進網社群平台 All Right Reserved
+			本網站建議使用：IE9.0以上版本，1024 x 768 pixels 以上觀賞瀏覽 ， Copyright © 2023健康促進網社群平台 All Right Reserved
 			<br>
 			服務信箱：health@test.labor.gov.tw<img src="./icons/02B02.jpg" width="45">
 		</div>

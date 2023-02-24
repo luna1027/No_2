@@ -325,9 +325,29 @@ input[type=radio] {
 .mAuto {
 	width: fit-content;
 	margin: auto;
+	padding: 16px;
 }
 
 .w150 {
-	width: 150px;
+	width: fit-content;
+	min-width: 150px;
 	padding: 4px;
+}
+
+.w50 {
+	width: 50%;
+}
+
+.bl {
+	color: #0CF;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.line {
+	width: 300px;
+	height: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
